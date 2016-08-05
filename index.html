@@ -1,0 +1,129 @@
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<link rel="stylesheet" type="text/css" href="theme.css">
+<script type="text/javascript" src="jquery-2.1.4.js"></script>
+
+<script type="text/javascript">
+
+var sum = [1, 2, 3, 4].reduce(add, 0);
+
+function add(a, b) {
+	 alert(a + b);
+    return a + b;
+
+}
+
+function multiply(array){
+return array.reduce(function(a, b) {
+      return a * b;
+})
+}
+
+
+function twat(){
+}
+
+console.log(sum); // 6   
+
+console.log( multiply( sum ) );
+
+</script>
+</head>
+<body>
+<div class="tabbed-area">
+
+	<ul class="tab group">
+	    <li id="tab1"  class="tabs active">Tab 1</li>
+	    <li id="tab2"  class="tabs"    >Tab 2</li>
+	    <li id="tab3"  class="tabs"    >Tab 3</li>
+	</ul>
+	
+	
+		<div id="box-one" class="a">
+		  <!-- box two content -->
+		  <h1>hello</h1>
+		</div>
+		
+		<div id="box-two" class="a">
+		  <!-- box two content -->
+		  <h1>world</h1>
+		</div>
+		
+		<div id="box-three" class="a">
+		  <!-- box two content -->
+		  <h1>james</h1>
+		</div>
+	
+
+</div>
+
+<div>
+<button onclick="multiply()">Try it</button>
+</div>
+
+
+<script>
+$(document).ready(function(){
+       $('#box-two').hide();
+       $('#box-three').hide();
+
+
+
+        $(".tabs").click(function(){
+             
+
+        	//hiding all by default
+        //$('#box-one').hide();
+        //$('#box-two').hide();
+        //$('#box-three').hide();
+
+
+     $('.a').hide();
+        $(".tabs").removeClass('active');
+        
+
+        $(this).addClass('active');
+
+
+
+         //Set variables
+        var showTab1 = false;
+        var showTab2 = false;
+        var showTab3 = false;
+        var secondaryNavCount = 0;
+
+        if($("#tab1").is('.active')){
+        	 showTab1 = true;
+        	 secondaryNavCount++;
+        }
+
+        if($("#tab2").is('.active')){
+        	 showTab2 = true;
+        	 secondaryNavCount++;
+        }
+
+        if($("#tab3").is('.active')){
+        	 showTab3 = true;
+        	 secondaryNavCount++;
+        }
+
+        if (showTab1) {
+              $('#box-one').show();
+            }
+        if (showTab2) {
+              $('#box-two').show();
+            }
+
+        if (showTab3) {
+              $('#box-three').show();
+            }
+        });
+        
+
+});
+
+</script>
+
+</body>
+</html>
